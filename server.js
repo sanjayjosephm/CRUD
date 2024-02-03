@@ -17,18 +17,6 @@ const prisma = new PrismaClient();
 //     database: 'db_connect'
 // })
 
-// async function main() {
-//   const users = await prisma.Student.findMany();
-//   console.log(users);
-// }
-
-// main()
-//   .catch(e => {
-//     throw e
-//   })
-//   .finally(async () => {
-//     await prisma.$disconnect()
-//   });
 
 // db.connect(function(err) {
 //     if (err) {
@@ -74,6 +62,10 @@ server.listen(8080, function check(error) {
 //       }
 //     });
 // });
+
+server.get("/", (req, res) => {
+     res.send("student V1 API Working")
+   });
 
 server.post('/api/student/add', async (req, res) => {
   try {
